@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Happy Birthday Lulama ❤️</title>
+
+<!-- FAVICON -->
+<link rel="icon" type="image/png" href="https://i.postimg.cc/J4zxWVMr/20251228-203140.jpg">
+
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#050505;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND */
+
+.bg{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(circle at top, rgba(255,0,85,0.18), transparent 35%),
+    radial-gradient(circle at bottom, rgba(255,0,140,0.12), transparent 30%),
+    #050505;
+    z-index:-2;
+}
+
+/* HEARTS */
+
+.hearts{
+    position:fixed;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    z-index:-1;
+}
+
+.heart{
+    position:absolute;
+    bottom:-50px;
+    color:#ff2e75;
+    animation:float 10s linear infinite;
+    opacity:0.5;
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+    }
+
+    20%{
+        opacity:0.6;
+    }
+
+    100%{
+        transform:translateY(-120vh) rotate(360deg);
+        opacity:0;
+    }
+
+}
+
+/* ROSE PETALS */
+
+.petals{
+    position:fixed;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    top:0;
+    left:0;
+    pointer-events:none;
+    z-index:-1;
+}
+
+.petal{
+    position:absolute;
+    top:-50px;
+    color:#ff174f;
+    font-size:22px;
+    opacity:0.7;
+    animation:fall linear infinite;
+    filter:drop-shadow(0 0 8px rgba(255,0,80,0.5));
+}
+
+@keyframes fall{
+
+    0%{
+        transform:
+        translateY(-10vh)
+        translateX(0)
+        rotate(0deg);
+
+        opacity:0;
+    }
+
+    10%{
+        opacity:0.8;
+    }
+
+    100%{
+        transform:
+        translateY(120vh)
+        translateX(100px)
+        rotate(360deg);
+
+        opacity:0;
+    }
+
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero h1{
+    font-size:5rem;
+    font-family:'Great Vibes',cursive;
+    color:#ff4d88;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.2rem;
+    line-height:1.8;
+    color:#ddd;
+}
+
+.birth-date{
+    margin-top:25px;
+    color:#ff9bbd;
+    font-size:1rem;
+    letter-spacing:2px;
+}
+
+/* BUTTON */
+
+.btn{
+    margin-top:35px;
+    display:inline-block;
+    padding:15px 35px;
+    border-radius:50px;
+    background:linear-gradient(135deg,#ff2e75,#ff006a);
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.4s;
+    box-shadow:0 0 20px rgba(255,0,106,0.4);
+    cursor:pointer;
+    border:none;
+}
+
+.btn:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 35px rgba(255,0,106,0.8);
+}
+
+/* SECTIONS */
+
+section{
+    padding:100px 10%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:3rem;
+    color:#ff4d88;
+    font-family:'Great Vibes',cursive;
+}
+
+/* CARDS */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+    padding:30px;
+    border-radius:25px;
+    backdrop-filter:blur(10px);
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    border-color:#ff2e75;
+    box-shadow:0 0 25px rgba(255,0,106,0.2);
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#ff4d88;
+}
+
+/* LETTER */
+
+.letter{
+    background:rgba(255,255,255,0.03);
+    border-radius:30px;
+    padding:50px;
+    line-height:2;
+    font-size:1.05rem;
+    color:#ddd;
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.gallery-item{
+    position:relative;
+    overflow:hidden;
+    border-radius:20px;
+}
+
+.gallery-item img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    transition:0.5s;
+    filter:brightness(45%) contrast(105%);
+}
+
+.gallery-item:hover img{
+    transform:scale(1.05);
+    filter:brightness(60%);
+}
+
+/* REASONS */
+
+.reason-box{
+    max-width:700px;
+    margin:auto;
+    text-align:center;
+    padding:40px;
+    border-radius:25px;
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+.reason-counter{
+    font-size:4rem;
+    color:#ff2e75;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.reason-text{
+    margin-top:25px;
+    font-size:1.2rem;
+    color:#ddd;
+    min-height:50px;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:50px 20px;
+    color:#999;
+    border-top:1px solid rgba(255,255,255,0.08);
+}
+
+/* MUSIC BUTTON */
+
+.music-btn{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:60px;
+    height:60px;
+    border:none;
+    border-radius:50%;
+    background:#ff2e75;
+    color:white;
+    font-size:1.3rem;
+    cursor:pointer;
+    box-shadow:0 0 20px rgba(255,0,106,0.5);
+    z-index:999;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:3.5rem;
+}
+
+.hero p{
+    font-size:1rem;
+}
+
+.section-title h2{
+    font-size:2.5rem;
+}
+
+.letter{
+    padding:30px;
+}
+
+.reason-counter{
+    font-size:3rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<div class="hearts" id="hearts"></div>
+
+<div class="petals" id="petals"></div>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Happy Birthday Lulama Chauke ❤️</h1>
+
+<p>
+From the moment we found each other again, my world changed in the most beautiful way possible.
+You became my peace, my happiness, my safe place and the person I look forward to every single day.
+</p>
+
+<p class="birth-date">
+20 May 2002 ✨
+</p>
+
+<a href="#letter" class="btn">Read My Heart ❤️</a>
+
+</div>
+
+</section>
+
+<!-- THINGS I LOVE -->
+
+<section>
+
+<div class="section-title">
+<h2>Things I Love About You</h2>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>Your Smile</h3>
+<p>The kind of smile that makes everything around me feel softer and calmer.</p>
+</div>
+
+<div class="card">
+<h3>Your Heart</h3>
+<p>You love gently, purely and sincerely. That's rare and beautiful.</p>
+</div>
+
+<div class="card">
+<h3>Your Faith</h3>
+<p>The way you love God makes me admire you even more every day.</p>
+</div>
+
+<div class="card">
+<h3>Your Energy</h3>
+<p>Talking to you became the best part of my mornings and nights.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- REASONS -->
+
+<section>
+
+<div class="section-title">
+<h2>Reasons Why I Love You ❤️</h2>
+</div>
+
+<div class="reason-box">
+
+<div class="reason-counter">
+127
+</div>
+
+<p>
+Reasons and still counting forever ❤️
+</p>
+
+<button class="btn" onclick="showReason()">
+Show Me Another Reason ❤️
+</button>
+
+<div class="reason-text" id="reasonText">
+Your smile makes my entire day better.
+</div>
+
+</div>
+
+</section>
+
+<!-- LETTER -->
+
+<section id="letter">
+
+<div class="section-title">
+<h2>A Letter For You</h2>
+</div>
+
+<div class="letter">
+
+<p>
+
+Happy Birthday Lulama ❤️
+<br><br>
+
+20 May 2002 — the day Heaven decided the world deserved someone as beautiful as you.
+<br><br>
+
+I still can't believe how quickly you became such an important part of my life.
+Somehow, after all these years, we found each other again and everything just felt right.
+<br><br>
+
+You came into my life so unexpectedly and suddenly my days became brighter, softer and happier.
+<br><br>
+
+I smile more because of you.
+I pray differently because of you.
+I look forward to every message, every call and every moment with you.
+<br><br>
+
+You are honestly one of the most beautiful women I've ever met — not just physically, but emotionally and spiritually too.
+<br><br>
+
+I love how you reassure me.
+I love your softness.
+I love your laugh.
+I love your voice.
+I love the way you make me feel wanted and appreciated.
+<br><br>
+
+I know we are still growing together, but one thing I already know for sure is that meeting you was one of the best things that ever happened to me.
+<br><br>
+
+On your birthday, I pray that God protects you, guides you and gives you everything your heart secretly wishes for.
+<br><br>
+
+I pray this year becomes the year you feel deeply loved, appreciated, successful and genuinely happy.
+<br><br>
+
+And as for me?
+<br><br>
+
+I'll keep trying every day to make you smile, feel safe and feel loved properly.
+<br><br>
+
+Thank you for being my girl.
+Thank you for trusting me with your heart.
+<br><br>
+
+I love you endlessly ❤️
+
+</p>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section>
+
+<div class="section-title">
+<h2>Our Memories ❤️</h2>
+</div>
+
+<div class="gallery">
+
+<div class="gallery-item">
+<img src="https://i.postimg.cc/JhbQMRFy/file-00000000ad2c71fd932f7ea6f6d0fbf9.png">
+</div>
+
+<div class="gallery-item">
+<img src="https://i.postimg.cc/pdDBRPSz/20260509-102643.jpg">
+</div>
+
+<div class="gallery-item">
+<img src="https://i.postimg.cc/fLCjSBDW/20251228-121943.jpg">
+</div>
+
+<div class="gallery-item">
+<img src="https://i.postimg.cc/vZxz2rLW/IMG-20260519-WA0038.jpg">
+</div>
+
+</div>
+
+</section>
+
+<!-- FINAL -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1 style="font-size:4rem;">Forever Starts Here ❤️</h1>
+
+<p>
+No matter where life takes us, I hope we always choose each other,
+communicate honestly, love deeply and keep God at the center of everything.
+</p>
+
+<button class="btn" onclick="showLove()">
+Click Me Babey ❤️
+</button>
+
+</div>
+
+</section>
+
+<!-- CINEMATIC ENDING -->
+
+<section class="ending-section">
+
+<div class="ending-overlay"></div>
+
+<div class="ending-content">
+
+<h2>
+And if I had to choose again...
+</h2>
+
+<p>
+In every lifetime, every universe, every version of my life...
+<br><br>
+it would still be you, Lulama ❤️
+</p>
+
+<button class="btn ending-btn" onclick="finalMessage()">
+One Last Thing ❤️
+</button>
+
+</div>
+
+</section>
+</section>
+
+<footer class="footer">
+
+<div class="footer-left">
+
+</div>
+
+<div class="footer-center">
+Made With Endless Love By Your Boyfriend, Glen John Nwaila ❤️
+</div>
+
+<div class="footer-right">
+© 2026 All Rights Reserved By Pure Grace Multi Corp
+</div>
+
+</footer>
+
+<!-- YOUTUBE PLAYER -->
+
+<div id="youtube-player"></div>
+
+<!-- MUSIC BUTTON -->
+
+<button class="music-btn" onclick="toggleMusic()">🎵</button>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+
+<script>
+
+/* HEARTS */
+
+const heartsContainer = document.getElementById('hearts');
+
+function createHeart(){
+
+    const heart = document.createElement('div');
+
+    heart.classList.add('heart');
+
+    heart.innerHTML = '❤️';
+
+    heart.style.left = Math.random() * 100 + 'vw';
+
+    heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+
+    heart.style.animationDuration = Math.random() * 5 + 5 + 's';
+
+    heartsContainer.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    },10000);
+
+}
+
+setInterval(createHeart,300);
+
+/* PETALS */
+
+const petalsContainer = document.getElementById('petals');
+
+function createPetal(){
+
+    const petal = document.createElement('div');
+
+    petal.classList.add('petal');
+
+    petal.innerHTML = '🌹';
+
+    petal.style.left = Math.random() * 100 + 'vw';
+
+    petal.style.animationDuration =
+    (Math.random() * 5 + 8) + 's';
+
+    petal.style.fontSize =
+    (Math.random() * 15 + 18) + 'px';
+
+    petalsContainer.appendChild(petal);
+
+    setTimeout(() => {
+        petal.remove();
+    },13000);
+
+}
+
+setInterval(createPetal,700);
+
+/* LOVE REASONS */
+
+<!-- REPLACE YOUR CURRENT REASONS ARRAY WITH THIS -->
+
+const reasons = [
+
+"Your smile makes my entire day better.",
+"The way you reassure me when I overthink.",
+"Your beautiful heart.",
+"The way you speak to me softly.",
+"Your faith in God.",
+"The way you make me feel safe.",
+"Your laugh.",
+"The way you care about the little things.",
+"Your beautiful energy.",
+"The way you love me genuinely.",
+"The way you listen to me.",
+"Your loyalty.",
+"The way you understand me emotionally.",
+"The peace you bring into my life.",
+"The way you make me smile for no reason.",
+"The way your voice calms me down.",
+"The way you pray.",
+"The way you look at me.",
+"The softness in your heart.",
+"The way you support me.",
+"The way you make me feel chosen.",
+"The way you trust me.",
+"The way you comfort me.",
+"The way you brighten my bad days.",
+"The way you make ordinary moments feel special.",
+"The way you appreciate me.",
+"The way you speak about your dreams.",
+"The way you care deeply.",
+"The way you love with intention.",
+"The way you always make time for me.",
+"The way your smile lights up everything.",
+"The way you motivate me.",
+"The way you make me feel important.",
+"The way you make me feel understood.",
+"The way you flirt with me 😂❤️",
+"The way your eyes shine.",
+"The way you carry yourself.",
+"The way you make love feel peaceful.",
+"The way you believe in us.",
+"The way you never stop being sweet.",
+"The way you became my favorite person.",
+"The way you make my mornings softer.",
+"The way you became my safe place.",
+"The way you make my heart feel full.",
+"The way you genuinely care about me.",
+"The way you stay patient with me.",
+"The way you calm my mind.",
+"The way you love God first.",
+"The way you make me excited for the future.",
+"The way you make me feel lucky every day."
+
+];
+
+function showReason(){
+
+    const randomReason =
+    reasons[Math.floor(Math.random() * reasons.length)];
+
+    document.getElementById("reasonText").innerHTML =
+    randomReason;
+
+}
+
+/* YOUTUBE MUSIC */
+
+let player;
+
+function onYouTubeIframeAPIReady() {
+
+    player = new YT.Player('youtube-player', {
+
+        height: '0',
+        width: '0',
+
+        videoId: '0uMpmFspIQ8',
+
+        playerVars: {
+            autoplay: 0,
+            loop: 1,
+            playlist: '0uMpmFspIQ8'
+        }
+
+    });
+
+}
+
+/* MUSIC BUTTON */
+
+function toggleMusic(){
+
+    if(player){
+
+        const state = player.getPlayerState();
+
+        if(state == 1){
+            player.pauseVideo();
+        }else{
+            player.playVideo();
+        }
+
+    }
+
+}
+
+/* FINAL BUTTON */
+
+function showLove(){
+
+    alert("I Love You More Than Words Could Ever Explain ❤️");
+
+}
+
+</script>
+
+</body>
+</html>
